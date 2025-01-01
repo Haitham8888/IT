@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الخطة الدراسية - تقني</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/study-plan.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .navbar {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            direction: rtl;
+            margin-bottom: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border-radius: 0 0 15px 15px;
+        }
+        
+        .nav-links {
+            display: flex;
+            margin-right: 2rem;
+            list-style: none;
+            gap: 2rem;
+            padding: 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2962ff;
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links a {
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #2962ff;
+            background: rgba(41, 98, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background: #2962ff;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-links a:hover::after {
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">تقني</div>
+        <ul class="nav-links">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="study-plan.html">الخطة الدراسية</a></li>
+            <li><a href="certificates.html">الشهادات المهنية</a></li>
+            <li><a href="careers.html">المسارات الوظيفية</a></li>
+            <li><a href="contact.html">تواصل معي</a></li>
+        </ul>
+    </nav>
+
+    <main class="study-plan-container">
+        <header class="plan-header">
+            <h1 class="page-title" style="color: #ffffff;">الخطة الدراسية لتخصص تقنية المعلومات</h1>
+
+            <div class="plan-summary">
+                <div class="summary-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>عدد المستويات</h3>
+                    <p>٨ مستويات</p>
+                </div>
+                <div class="summary-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>إجمالي الساعات</h3>
+                    <p>١٣٧ ساعة</p>
+                </div>
+                <div class="summary-card">
+                    <i class="fas fa-code-branch"></i>
+                    <h3>المسارات التخصصية</h3>
+                    <p>٣ مسارات</p>
+                </div>
+            </div>
+        </header>
+        <!-- Quick Navigation -->
+        <div class="quick-nav">
+            <div class="nav-group">
+            <button class="nav-button primary" onclick="scrollToSection('tracks')">
+                <i class="fas fa-code-branch"></i>
+                المسارات التخصصية
+            </button>
+            <button class="nav-button primary" onclick="scrollToSection('summer')">
+                <i class="fas fa-briefcase"></i>
+                التدريب التعاوني
+            </button>
+            </div>
+
+            <div class="nav-group"></div>
+            <div class="level-dropdown">
+                <button class="nav-button dropdown-toggle">
+                <i class="fas fa-graduation-cap"></i>
+                المستويات الدراسية 
+                <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="dropdown-content">
+                <div class="semester-group">
+                    <h4>السنة الأولى</h4>
+                    <a href="#level1"><i class="fas fa-angle-left"></i> المستوى الأول</a>
+                    <a href="#level2"><i class="fas fa-angle-left"></i> المستوى الثاني</a>
+                </div>
+                <div class="semester-group">
+                    <h4>السنة الثانية</h4>
+                    <a href="#level3"><i class="fas fa-angle-left"></i> المستوى الثالث</a>
+                    <a href="#level4"><i class="fas fa-angle-left"></i> المستوى الرابع</a>
+                </div>
+                <div class="semester-group">
+                    <h4>السنة الثالثة</h4>
+                    <a href="#level5"><i class="fas fa-angle-left"></i> المستوى الخامس</a>
+                    <a href="#level6"><i class="fas fa-angle-left"></i> المستوى السادس</a>
+                </div>
+                <div class="semester-group">
+                    <h4>السنة الرابعة</h4>
+                    <a href="#level7"><i class="fas fa-angle-left"></i> المستوى السابع</a>
+                    <a href="#level8"><i class="fas fa-angle-left"></i> المستوى الثامن</a>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <!-- Add Tracks Section -->
+        <section class="tracks-section" id="tracks">
+            <h2>المسارات التخصصية والمقررات الاختيارية</h2>
+            <div class="tracks-grid">
+                <div class="track-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>أمن المعلومات</h3>
+                    <p>يركز على حماية البيانات والأنظمة من التهديدات السيبرانية</p>
+                    <ul class="track-courses">
+                        <li>تقم ٣٣٣ - الأمن السيبراني والجريمة الإلكترونية</li>
+                        <li>تقم ٤٣٤ - أمن البرمجيات</li>
+                        <li>تقم ٤٣٥ - التحليل الجنائي الرقمي</li>
+                    </ul>
+                </div>
+                <div class="track-card">
+                    <i class="fas fa-database"></i>
+                    <h3>التنقيب في البيانات</h3>
+                    <p>يختص بتحليل البيانات الضخمة واستخراج المعرفة منها</p>
+                    <ul class="track-courses">
+                        <li>تقم ٣١٤ - تعلم الآلة</li>
+                        <li>تقم ٤١٥ - التنقيب في البيانات</li>
+                        <li>تقم ٤١٦ - تحليل البيانات الضخمة</li>
+                    </ul>
+                </div>
+                <div class="track-card">
+                    <i class="fas fa-code"></i>
+                    <h3>نظم الويب</h3>
+                    <p>يركز على تطوير تطبيقات الويب المتقدمة</p>
+                    <ul class="track-courses">
+                        <li>تقم ٣٤٤ - تصميم الويب</li>
+                        <li>تقم ٤٤٥ - برمجة الويب التطبيقية</li>
+                        <li>تقم ٤٤٦ - ذكاء الويب</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="info-note">
+                <i class="fas fa-info-circle"></i>
+                <p>يتم اختيار المسار التخصصي عند تسجيل مقرر اختياري ١ في المستوى السادس، ويستكمل في المقررين الاختياريين ٢ و ٣</p>
+            </div>
+        </section>
+
+        <section class="core-courses">
+            <h2>المقررات الأساسية</h2>
+            
+            <!-- المستوى الأول -->
+            <div class="semester" id="level1">
+                <div class="semester-header">
+                    <h3>المستوى الأول</h3>
+                </div>
+                <span class="total-hours">١٧ ساعة معتمدة</span>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>رقم ورمز المقرر</th>
+                                <th>اسم المقرر</th>
+                                <th>المتطلب السابق</th>
+                                <th>نظري</th>
+                                <th>عملي</th>
+                                <th>ساعة معتمدة</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>١</td>
+                                <td>عال ١١١</td>
+                                <td>مقدمة في الحوسبة</td>
+                                <td>-</td>
+                                <td>٣</td>
+                                <td>٢</td>
+                                <td>٢</td>
+                            </tr>
+                            <tr>
+                                <td>٢</td>
+                                <td>ريض ١٠٥</td>
+                                <td>تفاضل وتكامل</td>
+                                <td>-</td>
+                                <td>٤</td>
+                                <td>٤</td>
+                                <td>٠</td>
+                            </tr>
+                            <tr>
+                                <td>٣</td>
+                                <td>نجل ١٠١</td>
+                                <td>لغة إنجليزية ١</td>
+                                <td>-</td>
+                                <td>٦</td>
+                                <td>١٨</td>
+                                <td>٠</td>
+                            </tr>
+                            <tr>
+                                <td>٤</td>
+                                <td>عرب ١٠٢</td>
+                                <td>تحرير عربي</td>
+                                <td>-</td>
+                                <td>٢</td>
+                                <td>٢</td>
+                                <td>٠</td>
+                            </tr>
+                            <tr>
+                                <td>٥</td>
+                                <td>سلم ١٠١</td>
+                                <td>ثقافة إسلامية ١</td>
+                                <td>-</td>
+                                <td>٢</td>
+                                <td>٢</td>
+                                <td>٠</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- المستوى الثاني -->
+            <div class="semester" id="level2">
+                <div class="semester-header">
+                    <h3>المستوى الثاني</h3>
+                </div>
+                <span class="total-hours">١٥ ساعة معتمدة</span>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>رقم ورمز المقرر</th>
+                                <th>اسم المقرر</th>
+                                <th>المتطلب السابق</th>
+                                <th>نظري</th>
+                                <th>عملي</th>
+                                <th>ساعة معتمدة</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>١</td>
+                                <td>عال ١١٢</td>
+                                <td>برمجة ١</td>
+                                <td>-</td>
+                                <td>٣</td>
+                                <td>٢</td>
+                                <td>٢</td>
+                            </tr>
+                            <tr>
+                                <td>٢</td>
+                                <td>ريض ١٠٦</td>
+                                <td>جبر المصفوفات</td>
+                                <td>-</td>
+                                <td>٣</td>
+                                <td>٣</td>
+                                <td>٠</td>
+                            </tr>
+                            <tr>
+                                <td>٣</td>
+                                <td>ريض ١٠٧</td>
+                                <td>الرياضيات المتقطعة</td>
+                                <td>ريض ١٠٥</td>
+                                <td>٣</td>
+                                <td>٣</td>
+                                <td>٠</td>
+                            </tr>
+                            <tr>
+                                <td>٤</td>
+                                <td>نجل ١٠٢</td>
+                                <td>لغة إنجليزية ٢</td>
+                                <td>نجل ١٠١</td>
+                                <td>٦</td>
+                                <td>١٨</td>
+                                <td>٠</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- المستوى الثالث -->
+            <div class="semester" id="level3">
+                <div class="semester-header">
+                    <h3>المستوى الثالث</h3>
+                </div>
+                <span class="total-hours">١٥ ساعة معتمدة</span>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>رقم ورمز المقرر</th>
+                                <th>اسم المقرر</th>
+                                <th>المتطلب السابق</th>
+                                <th>نظري</th>
+                                <th>عملي</th>
+                                <th>ساعة معتمدة</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>١</td>
+                                <td>تقم ٢١١</td>
+                                <td>مفاهيم وتصميم قواعد البيانات</td>
+                                <td>-</td>
+                                <td>٣</td>
+                                <td>٢</td>
+                                <td>٢</td>
+                            </tr>
+                            <tr>
+                                <td>٢</td>
+                                <td>عال ٢١٣</td>
+                                <td>برمجة ٢</td>
+                                <td>عال ١١٢</td>
+                                <td>٣</td>
+                                <td>٢</td>
+                                <td>٢</td>
+                            </tr>
+                            <tr>
+                                <td>٣</td>
+                                <td>فيز ٢٠٤</td>
+                                <td>أساسيات الفيزياء ١</td>
+                                <td>-</td>
+                                <td>٤</td>
+                                <td>٣</td>
+                                <td>٢</td>
+                            </tr>
+                            <tr>
+                                <td>٤</td>
+                                <td>ريض ٢٦٢</td>
+                                <td>الإحصاء والاحتمالات</td>
+                                <td>-</td>
+                                <td>٣</td>
+                                <td>٣</td>
+                                <td>٠</td>
+                            </tr>
+                            <tr>
+                                <td>٥</td>
+                                <td>سلم ١٠٢</td>
+                                <td>ثقافة إسلامية ٢</td>
+                                <td>-</td>
+                                <td>٢</td>
+                                <td>٢</td>
+                                <td>٠</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- المستوى الرابع -->
+            <div class="semester" id="level4">
+                <div class="semester-header">
+                    <h3>المستوى الرابع</h3>
+                </div>
+                <span class="total-hours">١٥ ساعة معتمدة</span>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>رقم ورمز المقرر</th>
+                                <th>اسم المقرر</th>
+                                <th>المتطلب السابق</th>
+                                <th>نظري</th>
+                                <th>عملي</th>
+                                <th>ساعة معتمدة</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>١</td>
+                                <td>تقم ٢١٢</td>
+                                <td>نظم إدارة قواعد البيانات</td>
+                                <td>تقم ٢١١</td>
+                                <td>٣</td>
+                                <td>٢</td>
+                                <td>٢</td>
+                            </tr>
+                            <tr>
+                                <td>٢</td>
+                                <td>تقم ٢٤١</td>
+                                <td>تطبيقات الوسائط المتعددة</td>
+                                <td>-</td>
+                                <td>٣</td>
+                                <td>٢</td>
+                                <td>٢</td>
+                            </tr>
+                            <tr>
+                                <td>٣</td>
+                                <td>تقم ٢٥١</td>
+                                <td>اتصالات البيانات وشبكات الحاسب</td>
+                                <td>-</td>
+                                <td>٣</td>
+                                <td>٢</td>
+                                <td>٢</td>
+                            </tr>
+                            <tr>
+                                <td>٤</td>
+                                <td>تقم ٢٥٢</td>
+                                <td>التصميم الرقمي ومعمارية الحاسب</td>
+                                <td>-</td>
+                                <td>٣</td>
+                                <td>٢</td>
+                                <td>٢</td>
+                            </tr>
+                            <tr>
+                                <td>٥</td>
+                                <td>عال ٢١٤</td>
+                                <td>البرمجة الغرضية</td>
+                                <td>عال ٢١٣</td>
+                                <td>٣</td>
+                                <td>٢</td>
+                                <td>٢</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- المستوى الخامس -->
+            <div class="semester" id="level5">
+                <div class="semester-header">
+                    <h3>المستوى الخامس</h3>
+                </div>
+                <span class="total-hours">١٨ ساعة معتمدة</span>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>رقم ورمز المقرر</th>
+                                <th>اسم المقرر</th>
+                                <th>المتطلب السابق</th>
+                                <th>نظري</th>
+                                <th>عملي</th>
+                                <th>ساعة معتمدة</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>١</td>
+                                <td>تقم ٣٢١</td>
+                                <td>تفاعل الإنسان مع الحاسب</td>
+                                <td>-</td>
+                                <td>٣</td>
+                                <td>٢</td>
+                                <td>٢</td>
+                            </tr>
+                            <tr>
+                                <td>٢</td>
+                                <td>تقم ٣١٣</td>
+                                <td>مقدمة في علم البيانات</td>
+                                <td>-</td>
+                                <td>٣</td>
+                                <td>٢</td>
+                                <td>٢</td>
+                            </tr>
+                            <tr>
+                                <td>٣</td>
+                                <td>تقم ٣٣١</td>
+                                <td>أساسيات أمن تقنية المعلومات</td>
+                                <td>-</td>
+                                <td>٣</td>
+                                <td>٢</td>
+                                <td>٢</td>
+                            </tr>
+                            <tr>
+                                <td>٤</td>
+                                <td>تقم ٣٤٢</td>
+                                <td>تقنيات الويب</td>
+                                <td>-</td>
+                                <td>٣</td>
+                                <td>٢</td>
+                                <td>٢</td>
+                            </tr>
+                            <tr>
+                                <td>٥</td>
+                                <td>عال ٣٢١</td>
+                                <td>الخوارزميات وهياكل البيانات</td>
+                                <td>عال ٢١٣</td>
+                                <td>٣</td>
+                                <td>٢</td>
+                                <td>٢</td>
+                            </tr>
+                            <tr>
+                                <td>٦</td>
+                                <td>تقم ٣٢٢</td>
+                                <td>هندسة البرمجيات</td>
+                                <td>-</td>
+                                <td>٣</td>
+                                <td>٢</td>
+                                <td>٢</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <p class="note"></p>
+            <div class="semester" id="level6">
+                <div class="semester-header">
+                    <h3>المستوى السادس</h3>
+                </div>
+                <span class="total-hours">١٨ ساعة معتمدة</span>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>رقم ورمز المقرر</th>
+                                <th>اسم المقرر</th>
+                                <th>المتطلب السابق</th>
+                                <th>نظري</th>
+                                <th>عملي</th>
+                                <th>ساعة معتمدة</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>١</td>
+                                <td>تقم ٣٢٣</td>
+                                <td>إدارة مشاريع تقنية المعلومات</td>
+                                <td>-</td>
+                                <td>٣</td>
+                                <td>٢</td>
+                                <td>٢</td>
+                            </tr>
+                            <tr>
+                                <td>٢</td>
+                                <td>تقم ٣٣٢</td>
+                                <td>التشفير وأمن البيانات</td>
+                                <td>-</td>
+                                <td>٣</td>
+                                <td>٢</td>
+                                <td>٢</td>
+                            </tr>
+                            <tr>
+                                <td>٣</td>
+                                <td>تقم ٣٤٣</td>
+                                <td>تطوير تطبيقات الموبايل</td>
+                                <td>-</td>
+                                <td>٣</td>
+                                <td>٢</td>
+                                <td>٢</td>
+                            </tr>
+                            <tr>
+                                <td>٤</td>
+                                <td>تقم ٣٥٣</td>
+                                <td>التقنيات اللاسلكية</td>
+                                <td>تقم ٢٥١</td>
+                                <td>٣</td>
+                                <td>٢</td>
+                                <td>٢</td>
+                            </tr>
+                            <tr>
+                                <td>٥</td>
+                                <td>عال ٣٣٣</td>
+                                <td>نظم التشغيل</td>
+                                <td>-</td>
+                                <td>٣</td>
+                                <td>٢</td>
+                                <td>٢</td>
+                            </tr>
+                            <tr>
+                                <td>٦</td>
+                                <td>تقم ***</td>
+                                <td>مقرر اختياري ١</td>
+                                <td>-</td>
+                                <td>٣</td>
+                                <td>٢</td>
+                                <td>٢</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="info-note">
+                    <i class="fas fa-info-circle"></i>
+                    <p>يتم اختيار المسار التخصصي عند تسجيل مقرر اختياري ١ في المستوى السادس، ويستكمل في المقررين الاختياريين ٢ و ٣</p>
+                </div>
+            </div>
+
+            <!-- Summer Training Section -->
+            <section class="semester" id="summer">
+                <div class="semester-header">
+                    <h3>التدريب التعاوني</h3>
+                </div>
+                <span class="total-hours">٣ ساعات معتمدة</span>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>رقم ورمز المقرر</th>
+                                <th>اسم المقرر</th>
+                                <th>المتطلب السابق</th>
+                                <th>نظري</th>
+                                <th>عملي</th>
+                                <th>ساعة معتمدة</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>تقم ٣٦١</td>
+                                <td>التدريب التعاوني</td>
+                                <td>-</td>
+                                <td>٣</td>
+                                <td>٣</td>
+                                <td>٠</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="info-note">
+                    <i class="fas fa-info-circle"></i>
+                    <p>يمكنك اختيار تسجيل التدريب التعاوني بعد المستوى السادس أو بعد إكمال جميع المقررات. يجب ملاحظة أن تأخير التدريب التعاوني قد يؤثر على ترتيبك في الدفعة وبالتالي على حصولك على مرتبة الشرف.</p>
+                </div>
+            </section>
+
+            <!-- المستوى السابع -->
+            <div class="semester" id="level7">
+                <div class="semester-header">
+                    <h3>المستوى السابع</h3>
+                </div>
+                <span class="total-hours">١٨ ساعة معتمدة</span>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>رقم ورمز المقرر</th>
+                                <th>اسم المقرر</th>
+                                <th>المتطلب السابق</th>
+                                <th>نظري</th>
+                                <th>عملي</th>
+                                <th>ساعة معتمدة</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>١</td>
+                                <td>تقم ٤٢٤</td>
+                                <td>التصميم التفاعلي</td>
+                                <td>تقم ٣٢١</td>
+                                <td>٣</td>
+                                <td>٢</td>
+                                <td>٢</td>
+                            </tr>
+                            <tr>
+                                <td>٢</td>
+                                <td>شبك ٤١١</td>
+                                <td>أمن الشبكات</td>
+                                <td>-</td>
+                                <td>٣</td>
+                                <td>٢</td>
+                                <td>٢</td>
+                            </tr>
+                            <tr>
+                                <td>٣</td>
+                                <td>عال ٤٥٢</td>
+                                <td>الحوسبة السحابية</td>
+                                <td>-</td>
+                                <td>٣</td>
+                                <td>٢</td>
+                                <td>٢</td>
+                            </tr>
+                            <tr>
+                                <td>٤</td>
+                                <td>تقم ٤٥٤</td>
+                                <td>إدارة النظم</td>
+                                <td>-</td>
+                                <td>٣</td>
+                                <td>٢</td>
+                                <td>٢</td>
+                            </tr>
+                            <tr>
+                                <td>٥</td>
+                                <td>تقم ٤٢٥</td>
+                                <td>مشروع التخرج (المرحلة ١)</td>
+                                <td>-</td>
+                                <td>٣</td>
+                                <td>٣</td>
+                                <td>٠</td>
+                            </tr>
+                            <tr>
+                                <td>٦</td>
+                                <td>تقم ***</td>
+                                <td>مقرر اختياري ٢</td>
+                                <td>-</td>
+                                <td>٣</td>
+                                <td>٢</td>
+                                <td>٢</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="info-note">
+                    <i class="fas fa-info-circle"></i>
+                    <p>يتم اختيار المقرر الاختياري ٢ بناءً على المسار التخصصي المختار في المستوى السادس</p>
+                </div>
+            </div>
+
+            <!-- المستوى الثامن -->
+            <div class="semester" id="level8">
+                <div class="semester-header">
+                    <h3>المستوى الثامن</h3>
+                </div>
+                <span class="total-hours">١٨ ساعة معتمدة</span>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>رقم ورمز المقرر</th>
+                                <th>اسم المقرر</th>
+                                <th>المتطلب السابق</th>
+                                <th>نظري</th>
+                                <th>عملي</th>
+                                <th>ساعة معتمدة</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>١</td>
+                                <td>تقم ٤٢٦</td>
+                                <td>تكامل ومعمارية النظم</td>
+                                <td>تقم ٣٢٢</td>
+                                <td>٣</td>
+                                <td>٢</td>
+                                <td>٢</td>
+                            </tr>
+                            <tr>
+                                <td>٢</td>
+                                <td>تقم ٤٦٢</td>
+                                <td>أخلاقيات الحاسب والمجتمع</td>
+                                <td>-</td>
+                                <td>٣</td>
+                                <td>٢</td>
+                                <td>٢</td>
+                            </tr>
+                            <tr>
+                                <td>٣</td>
+                                <td>تقم ٤٥٥</td>
+                                <td>تصميم وإدارة مراكز البيانات</td>
+                                <td>تقم ٤٥٤</td>
+                                <td>٣</td>
+                                <td>٢</td>
+                                <td>٢</td>
+                            </tr>
+                            <tr>
+                                <td>٤</td>
+                                <td>تقم ٤٥٦</td>
+                                <td>إنترنت الأشياء</td>
+                                <td>-</td>
+                                <td>٣</td>
+                                <td>٢</td>
+                                <td>٢</td>
+                            </tr>
+                            <tr>
+                                <td>٥</td>
+                                <td>تقم ٤٢٧</td>
+                                <td>مشروع التخرج (المرحلة ٢)</td>
+                                <td>تقم ٤٢٥</td>
+                                <td>٣</td>
+                                <td>٣</td>
+                                <td>٠</td>
+                            </tr>
+                            <tr>
+                                <td>٦</td>
+                                <td>تقم ***</td>
+                                <td>مقرر اختياري ٣</td>
+                                <td>-</td>
+                                <td>٣</td>
+                                <td>٢</td>
+                                <td>٢</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="info-note">
+                    <i class="fas fa-info-circle"></i>
+                    <p>يتم اختيار المقرر الاختياري ٣ بناءً على المسار التخصصي المختار في المستوى السادس</p>
+                </div>
+            </div>
+        </section>
+
+        </main>
+
+        <!-- تحديث الفوتر -->
+        <footer class="footer" style="width: 100%; margin-top: 4rem;">
+            <div class="footer-container" style="max-width: 1200px; margin: 0 auto;">
+                <div class="footer-waves">
+                    <div class="wave" id="wave1"></div>
+                    <div class="wave" id="wave2"></div>
+                </div>
+                
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h4><i class="fas fa-paper-plane fa-bounce"></i> تواصل معنا</h4>
+                        <p><i class="fas fa-envelope animated-icon"></i> البريد الإلكتروني: haitham@taqani.sa</p>
+                        <p class="footer-note">نرد عليك بسرعة... إلا إذا كنا نبرمج 😅</p>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4><i class="fas fa-code-branch fa-beat-fade"></i> تابعني</h4>
+                        <div class="social-links">
+                            <a href="https://x.com/_Villo0" target="_blank" class="social-link twitter">
+                                <i class="fab fa-twitter"></i>
+                                <span class="tooltip">تابعني في إكس</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/haithamhattan/" target="_blank" class="social-link linkedin">
+                                <i class="fab fa-linkedin"></i>
+                                <span class="tooltip">تواصل معي في LinkedIn</span>
+                            </a>
+                            <a href="https://github.com/haitham8888" target="_blank" class="social-link github">
+                                <i class="fab fa-github"></i>
+                                <span class="tooltip">شوف مشاريعي في GitHub</span>
+                            </a>
+                        </div>
+                        <p class="footer-quote">"البرمجة هي فن حل المشكلات... وخلق مشكلات جديدة 😄 هذا كلام البطة الصينية حقتي"</p>
+                    </div>
+            
+                    <div class="footer-section">
+                        <h4><i class="fas fa-lightbulb fa-shake"></i> روابط مفيدة</h4>
+                        <ul class="footer-links">
+                            <li><a href="/careers.html"><i class="fas fa-book"></i> دليل المهن التقنية</a></li>
+                            <li><a href="/study-plan.html"><i class="fas fa-question-circle"></i> مسارات التقنية</a></li>
+                        </ul>
+                    </div>
+                </div>
+        
+                <div class="footer-bottom">
+                    <p>
+                        &copy; 2025 تقني - صنع بـ <i class="fas fa-heart text-danger animated-heart"></i> 
+                        و <i class="fas fa-coffee"></i> و الكثير من 
+                        <i class="fas fa-bug" title="الأخطاء البرمجية"></i>
+                    </p>
+                </div>
+            </div>
+        </footer>
+    
+
+    <!-- Add JavaScript for smooth scrolling and navigation -->
+    <script>
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+    <script>
+        const quickNav = document.querySelector('.quick-nav');
+        let lastScrollY = window.scrollY;
+        let ticking = false;
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const currentScrollY = window.scrollY;
+                    
+                    // إخفاء الشريط عند التمرير لأسفل
+                    if (currentScrollY > lastScrollY) {
+                        quickNav.classList.add('hidden');
+                    } else {
+                        quickNav.classList.remove('hidden');
+                    }
+                    
+                    lastScrollY = currentScrollY;
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+    </script>
+</body>
+</html>

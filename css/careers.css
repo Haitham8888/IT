@@ -1,0 +1,663 @@
+.careers-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+body {
+    min-width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Enhanced Page Header */
+.page-header {
+    position: relative;
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    overflow: hidden;
+    border-radius: 30px;
+    margin: 0 1rem 4rem 1rem;
+    text-align: center;
+}
+
+.page-header h1 {
+    color: white;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.page-header p {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.3rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 0.8s ease-out 0.2s backwards;
+}
+
+/* Decorative Elements */
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at top right, rgba(255,255,255,0.1) 0%, transparent 60%);
+}
+
+.page-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 150px;
+    background: linear-gradient(to top, rgba(255,255,255,0.1), transparent);
+    clip-path: polygon(0 50%, 100% 0, 100% 100%, 0% 100%);
+}
+
+/* Floating Particles Animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+.page-header .particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    animation: float 6s infinite;
+}
+
+.page-header .particle:nth-child(1) {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.page-header .particle:nth-child(2) {
+    top: 60%;
+    right: 15%;
+    animation-delay: -2s;
+}
+
+.page-header .particle:nth-child(3) {
+    bottom: 20%;
+    left: 20%;
+    animation-delay: -4s;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .page-header {
+        padding: 4rem 1.5rem;
+        margin: 0 0.5rem 3rem 0.5rem;
+    }
+
+    .page-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .page-header p {
+        font-size: 1.1rem;
+    }
+}
+
+.career-track {
+    margin-bottom: 4rem;
+}
+
+.career-track h2 {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    color: var(--text-dark);
+    font-size: 1.8rem;
+}
+
+.employers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    padding: 1rem;
+}
+
+/* Enhanced Employer Cards */
+.employer-card {
+    background: linear-gradient(145deg, #ffffff, #f8f9fa);
+    border: 1px solid rgba(41, 98, 255, 0.05);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.05), 
+                -5px -5px 15px rgba(255,255,255,0.6);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    animation: cardAppear 0.5s ease-out forwards;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 600px; /* ارتفاع موحد للبطاقات */
+}
+
+.employer-card.premium {
+    border: none;
+    background: linear-gradient(145deg, #ffffff, #fafafa);
+    box-shadow: 5px 5px 15px rgba(41, 98, 255, 0.1),
+                -5px -5px 15px rgba(255,255,255,0.8);
+    position: relative;
+}
+
+.employer-card.premium::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, var(--accent-color) 0%, transparent 75%);
+    opacity: 0.2;
+    border-radius: 0 20px 0 50px;
+}
+
+.employer-card.premium::after {
+    display: none;
+}
+
+.employer-card.government {
+    background: linear-gradient(145deg, #ffffff, #f8f9fa);
+    border: 2px solid rgba(41, 98, 255, 0.1);
+}
+
+.employer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.employer-header {
+    position: relative;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px; /* ارتفاع ثابت للشعار */
+}
+
+.employer-header img {
+    max-height: 50px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    transition: transform 0.3s ease;
+}
+
+.employer-header img:hover {
+    transform: scale(1.05);
+}
+
+.company-type {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    font-weight: 500;
+    box-shadow: 0 2px 5px rgba(41, 98, 255, 0.2);
+}
+
+.job-roles {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: rgba(41, 98, 255, 0.03);
+    border-radius: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.job-roles h4 {
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.job-roles ul {
+    display: grid;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin-bottom: auto;
+}
+
+/* Enhanced Job Roles */
+.job-roles li {
+    padding: 0.8rem 1.2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    margin: 0.8rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.9rem;
+    position: relative;
+    padding-right: 3rem;
+}
+
+.job-roles li:hover {
+    transform: translateX(-5px);
+    background: linear-gradient(to right, white, rgba(41, 98, 255, 0.05));
+}
+
+.job-roles li::before {
+    content: '';
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.job-roles li:hover::before {
+    transform: translateY(-50%) scale(1.5);
+    box-shadow: 0 0 10px var(--primary-color);
+}
+
+.job-roles i {
+    font-size: 1.2rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Enhanced Benefits */
+.company-benefits {
+    margin: 1.5rem 0;
+    padding: 1rem 0;
+    border-top: 1px solid rgba(41, 98, 255, 0.05);
+    border-bottom: 1px solid rgba(41, 98, 255, 0.05);
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.company-benefits span {
+    padding: 0.6rem 1.2rem;
+    background: rgba(41, 98, 255, 0.05);
+    border: 1px solid rgba(41, 98, 255, 0.1);
+    font-weight: 500;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.company-benefits span::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+    transition: 0.5s;
+}
+
+.company-benefits span:hover::after {
+    left: 100%;
+}
+
+.company-benefits i {
+    color: var(--primary-color);
+}
+
+/* Enhanced Apply Button */
+.apply-btn {
+    width: 100%;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    font-weight: 500;
+    border: none;
+    padding: 1rem 2rem;
+    margin-top: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.5s ease;
+    background-size: 200% auto;
+    background-image: linear-gradient(45deg, 
+        var(--primary-color) 0%, 
+        var(--primary-dark) 50%, 
+        var(--primary-color) 100%
+    );
+    height: 48px; /* ثابت لجميع الأزرار */
+    margin-top: 0; /* إزالة الهامش العلوي */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.apply-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: 0.5s;
+}
+
+.apply-btn:hover::before {
+    left: 100%;
+}
+
+.apply-btn:hover {
+    background-position: right center;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(41, 98, 255, 0.3);
+    animation: buttonGlow 1.5s infinite;
+    transform: translateY(-2px);
+}
+
+.apply-btn i {
+    margin-right: 8px;
+    transition: transform 0.3s ease;
+}
+
+.apply-btn:hover i {
+    transform: translateX(-3px);
+}
+
+/* New Animations */
+@keyframes backgroundMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 100%; }
+}
+
+@keyframes shine {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+/* New Loading State */
+.employer-card.loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.employer-card.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Responsive Enhancements */
+@media (max-width: 768px) {
+    .employers-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .employer-card {
+        padding: 1.5rem;
+        min-height: auto;
+    }
+
+    .job-roles {
+        padding: 1rem;
+    }
+
+    .company-benefits span {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    .apply-btn {
+        padding: 0.8rem 1.5rem;
+        height: 44px;
+        font-size: 0.9rem;
+    }
+
+    .page-header {
+        padding: 4rem 1.5rem;
+        margin: 0 0.5rem 3rem 0.5rem;
+    }
+
+    .page-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .page-header p {
+        font-size: 1.1rem;
+    }
+
+    .employer-card.premium::after {
+        top: 0.5rem;
+        right: 0.5rem;
+        font-size: 0.7rem;
+    }
+
+    .job-roles li {
+        padding-right: 2.5rem;
+    }
+
+    .employer-header {
+        height: auto;
+        padding-bottom: 1rem;
+    }
+
+    .tips-grid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+
+    .tip-card {
+        padding: 1.5rem;
+    }
+}
+
+/* Animation for Cards */
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Enhanced Apply Button Container */
+.employer-actions {
+    position: relative;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(41, 98, 255, 0.1);
+}
+
+/* تحسين تناسق البطاقات */
+.employer-card-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Animation for Button Hover */
+@keyframes buttonGlow {
+    0% { box-shadow: 0 5px 15px rgba(41, 98, 255, 0.2); }
+    50% { box-shadow: 0 5px 25px rgba(41, 98, 255, 0.4); }
+    100% { box-shadow: 0 5px 15px rgba(41, 98, 255, 0.2); }
+}
+
+/* Career Tips Section */
+.career-tips {
+    margin-top: 4rem;
+    padding: 3rem 0;
+    background: linear-gradient(135deg, rgba(41, 98, 255, 0.03), rgba(21, 101, 192, 0.03));
+    border-radius: 20px;
+}
+
+.career-tips h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--text-dark);
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+.tip-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(41, 98, 255, 0.1);
+    border: 1px solid rgba(41, 98, 255, 0.05);
+}
+
+.tip-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(41, 98, 255, 0.15);
+}
+
+.tip-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tip-card h3 {
+    font-size: 1.4rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.tip-card p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.tip-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.tip-card:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* تحسين تنسيق الفوتر */
+.footer {
+    width: 100%;
+    background: linear-gradient(135deg, #1a237e, #0d47a1);
+    position: relative;
+    overflow: hidden;
+    margin-top: 4rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-waves {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+}
+
+.wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.1' d='M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,208C1248,224,1344,192,1392,176L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") repeat-x;
+    animation: waveAnimation 20s linear infinite;
+}
