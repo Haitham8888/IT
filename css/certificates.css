@@ -1,11 +1,260 @@
-/* تنسيق الصفحة الرئيسية */
+:root {
+    --primary-color: #2962ff;
+    --primary-dark: #1565c0;
+    --primary-light: #768fff;
+    --secondary-color: #2c3e50;
+    --accent-color: #ffd700;
+    --success-color: #00c853;
+    --text-light: #ffffff;
+    --text-dark: #2c3e50;
+    --shadow-soft: 0 4px 20px rgba(41, 98, 255, 0.08);
+    --shadow-medium: 0 8px 30px rgba(41, 98, 255, 0.15);
+    --gradient-primary: linear-gradient(135deg, #2962ff, #1565c0);
+    --gradient-dark: linear-gradient(rgba(41, 98, 255, 0.9), rgba(0, 0, 0, 0.8));
+    --container-padding: 5rem;
+    --container-padding-mobile: 1rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tajawal', sans-serif;
+}
+
+body {
+    background: #f8f9fa;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    direction: rtl;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border-radius: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2962ff;
+    transition: all 0.3s ease;
+    margin: 0;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    padding: 0;
+    align-items: center;
+    margin: 0;
+}
+
+.nav-links a {
+    color: #2c3e50;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: #2962ff;
+    background: rgba(41, 98, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background: #2962ff;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-links a:hover::after {
+    width: 80%;
+}
+
+.certificates-hero {
+    min-height: 60vh;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 4rem 2rem;
+    border-radius: 30px;
+    margin: 2rem;
+    box-shadow: 0 10px 30px rgba(41, 98, 255, 0.2);
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.certificates-section {
+    padding: 4rem var(--container-padding);
+}
+
+.section-title {
+    text-align: center;
+    color: var(--primary-dark);
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin: 2rem auto;
+    max-width: 1400px;
+}
+
+.certificate-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow-soft);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.certificate-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.certificate-card h3 {
+    font-size: 1.5rem;
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+}
+
+.certificate-card p {
+    font-size: 1rem;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+}
+
+.certificate-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.certificate-card ul li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-dark);
+    margin-bottom: 0.5rem;
+}
+
+.details-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background: var(--gradient-primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.details-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+.resources-section {
+    padding: 4rem var(--container-padding);
+    background: linear-gradient(135deg, rgba(41, 98, 255, 0.05), rgba(13, 71, 161, 0.08));
+    border-radius: 20px;
+    margin: 2rem 0;
+    box-shadow: 0 4px 20px rgba(41, 98, 255, 0.1);
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.resource-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+    transition: all 0.3s ease;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.resource-card h3 {
+    font-size: 1.5rem;
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+}
+
+.resource-card p {
+    font-size: 1rem;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .certificates-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .resources-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .certificates-hero {
+        margin: 1rem;
+        padding: 2rem 1rem;
+    }
+}
+
 .certificates-container {
     max-width: 1400px;
     margin: 0 auto;
     padding: 2rem;
 }
 
-/* تحديث هيدر الصفحة */
 .page-header {
     text-align: center;
     padding: 6rem 2rem;
@@ -32,40 +281,6 @@
     z-index: 2;
 }
 
-/* إضافة تأثير الجزيئات المتحركة */
-.particle {
-    position: absolute;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    pointer-events: none;
-    animation: float 6s infinite;
-}
-
-.particle:nth-child(1) {
-    width: 100px;
-    height: 100px;
-    top: 20%;
-    left: 10%;
-    animation-delay: 0s;
-}
-
-.particle:nth-child(2) {
-    width: 80px;
-    height: 80px;
-    top: 60%;
-    right: 15%;
-    animation-delay: 2s;
-}
-
-.particle:nth-child(3) {
-    width: 60px;
-    height: 60px;
-    bottom: 20%;
-    left: 20%;
-    animation-delay: 4s;
-}
-
-/* تنسيق أقسام المسارات */
 .track-section {
     margin-bottom: 4rem;
     animation: fadeInUp 0.8s ease-out forwards;
@@ -95,16 +310,6 @@
     color: #2962ff;
 }
 
-/* تحديث شبكة الشهادات */
-.certificates-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    margin: 2rem auto;
-    max-width: 1400px;
-}
-
-/* تحديث بطاقات الشهادات */
 .cert-card {
     background: white;
     border-radius: 15px;
@@ -123,9 +328,8 @@
     box-shadow: 0 8px 25px rgba(41, 98, 255, 0.2);
 }
 
-/* تحديث حجم وتنسيق الصور */
 .cert-card img {
-    width: 80px; /* تصغير حجم الصورة */
+    width: 80px;
     height: 80px;
     object-fit: contain;
     margin: 0 auto;
@@ -136,7 +340,6 @@
     transform: scale(1.1);
 }
 
-/* تحسين تنسيق المحتوى */
 .cert-card h3 {
     color: #1a237e;
     font-size: 1.3rem;
@@ -168,7 +371,6 @@
     margin: 0;
 }
 
-/* تحسين تنسيق التفاصيل */
 .cert-details {
     display: flex;
     flex-wrap: wrap;
@@ -188,7 +390,6 @@
     gap: 0.5rem;
 }
 
-/* تحسين زر التفاصيل */
 .cert-link {
     margin-top: auto;
     padding: 0.75rem 1.5rem;
@@ -207,7 +408,6 @@
     transform: translateX(-5px);
 }
 
-/* قسم المصادر */
 .resources {
     background: linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 100%);
     padding: 3rem 2rem;
@@ -278,7 +478,6 @@
     font-size: 0.9rem;
 }
 
-/* تحسينات للموبايل */
 @media (max-width: 768px) {
     .page-header {
         padding: 4rem 1.5rem;
@@ -312,7 +511,6 @@
     }
 }
 
-/* تحسينات للموبايل */
 @media (max-width: 992px) {
     .certificates-grid {
         grid-template-columns: 1fr;
@@ -320,21 +518,10 @@
     }
 }
 
-/* تأثيرات حركية */
-@keyframes float {
-    0%, 100% { transform: translate(0, 0) rotate(0deg); }
-    50% { transform: translate(15px, -15px) rotate(5deg); }
-}
-
-@keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-}
-
 @keyframes fadeInUp {
     from {
         opacity: 0;
-         transform: translateY(30px);
+        transform: translateY(30px);
     }
     to {
         opacity: 1;
@@ -344,63 +531,4 @@
 
 .cert-card {
     animation: fadeInUp 0.5s ease-out forwards;
-}
-
-/* تنسيق الخلفية المتحركة للهيدر */
-.page-header::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, 
-        rgba(41, 98, 255, 0.1) 25%, 
-        transparent 25%, 
-        transparent 50%, 
-        rgba(41, 98, 255, 0.1) 50%, 
-        rgba(41, 98, 255, 0.1) 75%, 
-        transparent 75%, 
-        transparent);
-    background-size: 20px 20px;
-    animation: moveBackground 30s linear infinite;
-    opacity: 0.5;
-    z-index: 1;
-}
-
-@keyframes moveBackground {
-    0% { background-position: 0 0; }
-    100% { background-position: 400px 400px; }
-}
-
-/* تأثيرات إضافية */
-@keyframes shimmer {
-    0% { transform: translateX(-150%) translateY(-150%) rotate(0deg); }
-    100% { transform: translateX(150%) translateY(150%) rotate(360deg); }
-}
-
-/* Mobile Responsiveness for Certificates Page */
-@media (max-width: 768px) {
-    .certificates-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .cert-card {
-        margin: 1rem;
-    }
-
-    .cert-details {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .cert-details span {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .resources-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
 }
