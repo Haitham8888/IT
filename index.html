@@ -4,149 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تقني - بوابتك لعالم تقنية المعلومات</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logo/image.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/logo/image.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/logo/image.png">
     <link rel="manifest" href="images/site.webmanifest">
     <meta name="theme-color" content="#2962ff">
-    
-    <!-- Add favicon -->
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile-menu.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        .navbar {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            padding: 1rem 2rem;
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
-            direction: rtl;
-            margin-bottom: 1rem;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            border-radius: 0 0 15px 15px;
-        }
-        
-        .nav-links {
-            display: flex;
-            margin-right: 2rem;
-            list-style: none;
-            gap: 2rem;
-            padding: 0;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #2962ff;
-            transition: all 0.3s ease;
-        }
-
-        .logo:hover {
-            transform: scale(1.05);
-        }
-
-        .nav-links a {
-            color: #2c3e50;
-            text-decoration: none;
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .nav-links a:hover {
-            color: #2962ff;
-            background: rgba(41, 98, 255, 0.1);
-            transform: translateY(-2px);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 50%;
-            background: #2962ff;
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
-        }
-
-        .nav-links a:hover::after {
-            width: 80%;
-        }
-
-        /* Custom Hero Background Animation */
-        .hero::after {
-            content: '';
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, 
-                rgba(41, 98, 255, 0.1) 25%, 
-                transparent 25%, 
-                transparent 50%, 
-                rgba(41, 98, 255, 0.1) 50%, 
-                rgba(41, 98, 255, 0.1) 75%, 
-                transparent 75%, 
-                transparent);
-            background-size: 20px 20px;
-            animation: moveBackground 30s linear infinite;
-            opacity: 0.5;
-            z-index: 1;
-        }
-
-        @keyframes moveBackground {
-            0% { transform: translateX(0) translateY(0); }
-            100% { transform: translateX(-400px) translateY(-400px); }
-        }
-    </style>
+    <link rel="stylesheet" href="css/navbar.css">
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo">
-            <span class="logo-text">تقني</span>
+        <div class="navbar-container">
+            <div class="logo">
+                <span class="logo-text">تقني</span>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">الرئيسية</a></li>
+                <li><a href="study-plan.html">الخطة الدراسية</a></li>
+                <li><a href="certificates.html">الشهادات المهنية</a></li>
+                <li><a href="careers.html">التدريب والتوظيف</a></li>
+                <li><a href="contact.html">تواصل معي</a></li>
+            </ul>
         </div>
-        <ul class="nav-links">
-            <li><a href="index.html">الرئيسية</a></li>
-            <li><a href="study-plan.html">الخطة الدراسية</a></li>
-            <li><a href="certificates.html">الشهادات المهنية</a></li>
-            <li><a href="careers.html">المسارات الوظيفية</a></li>
-            <li><a href="contact.html">تواصل معي</a></li>
-        </ul>
     </nav>
+
     <header class="hero">
         <div class="hero-content">
             <h1>مستقبلك في عالم التقنية يبدأ من هنا</h1>
             <p>اكتشف عالم تقنية المعلومات وفرص النمو المهني في المملكة العربية السعودية</p>
-            <a href="careers.html" class="cta-button">وين تتوظف؟ <i class="fas fa-briefcase"></i></a>
+            <a href="careers.html" class="cta-button">
+                وين تقدر تدرب وتتوظف ؟ 
+                <i class="fas fa-briefcase"></i>
+            </a>
         </div>
     </header>
 
-
     <main>
         <section id="about" class="section">
-            <h2>عن تخصص تقنية المعلومات</h2>
+            <h2 class="section-title">عن تخصص تقنية المعلومات</h2>
             <div class="content-grid">
                 <div class="info-card">
                     <i class="fas fa-laptop-code"></i>
                     <h3>ما هو تخصص تقنية المعلومات؟</h3>
                     <p>تخصص يجمع بين الجوانب النظرية والتطبيقية في إدارة وتطوير وتحليل النظم التقنية الحديثة، ويركز على تحويل البيانات إلى حلول عملية تخدم مختلف القطاعات</p>
                 </div>
+
                 <div class="info-card">
-                    <i class="fas fa-chart-line"></i>
+                    <i class="fas fa-chart-line pulse"></i>
                     <h3>مستقبل التخصص</h3>
                     <p>نمو متسارع في سوق العمل مع تحول المملكة الرقمي ورؤية 2030</p>
                 </div>
+
                 <div class="info-card">
                     <i class="fas fa-university"></i>
                     <h3>الجامعات السعودية</h3>
@@ -154,150 +70,157 @@
                 </div>
             </div>
         </section>
+
         <section id="universities" class="section">
             <h2 class="section-title">أبرز الجامعات في تقنية المعلومات</h2>
             
             <!-- Featured University -->
-            <div class="featured-university animate-on-scroll" style="margin-bottom: 2rem;"></div>
             <div class="university-card featured glass-effect">
-            <div class="university-header">
-            <i class="fas fa-crown crown-icon"></i>
-            <h3>جامعة جازان</h3>
-            </div>
-            <p class="university-desc">كلية الحاسب الآلي وتقنية المعلومات</p>
-            <div class="achievement">
-            <div class="trophy-container">
-                <i class="fas fa-trophy pulse"></i>
-            </div>
-            <p>المركز الأول في الأمن السيبراني على مستوى المملكة في CyberHub لأكثر من سنة</p>
-            </div>
-            <div class="programs"></div>
-            <h4><i class="fas fa-star"></i> البرامج المميزة</h4>
-            <ul class="programs-list">
-                <li><i class="fas fa-robot"></i> الذكاء الاصطناعي وعلم البيانات</li>
-                <li><i class="fas fa-shield-alt"></i> أمن المعلومات</li>
-                <li><i class="fas fa-code"></i> تطوير التطبيقات والمواقع</li>
-                <li><i class="fas fa-network-wired"></i> إنترنت الأشياء</li>
-                <li><i class="fas fa-microchip"></i> الروبوتات</li>
-            </ul>
-            </div>
-            </div>
-            </div>
-
-            <!-- Rest of the code remains the same -->
-            <div class="universities-grid">
-            <div class="university-card hover-effect">
-            <div class="card-inner">
-            <i class="fas fa-university university-icon"></i>
-            <h3>جامعة الملك سعود</h3>
-            <p class="university-desc">كلية علوم الحاسب والمعلومات</p>
-            <div class="programs-brief">
-                    <i class="fas fa-brain"></i>
-                    <p>برامج متميزة في الذكاء الاصطناعي وتقنية المعلومات</p>
+                <div class="university-header">
+                    <i class="fas fa-crown crown-icon"></i>
+                    <h3>جامعة جازان</h3>
                 </div>
-                </div>
-            </div>
-
-            <div class="university-card hover-effect">
-                <div class="card-inner">
-                <i class="fas fa-university university-icon"></i>
-                <h3>جامعة الملك فهد للبترول والمعادن</h3>
-                <p class="university-desc">كلية علوم وهندسة الحاسب الآلي</p>
-                <div class="programs-brief">
-                    <i class="fas fa-award"></i>
-                    <p>تصنيف عالمي متقدم في مجالات الحوسبة</p>
-                </div>
-                </div>
-            </div>
-
-            <div class="university-card hover-effect">
-                <div class="card-inner">
-                <i class="fas fa-university university-icon"></i>
-                <h3>جامعة الملك عبدالله للعلوم والتقنية</h3>
-                <p class="university-desc">قسم علوم الحاسب والهندسة</p>
-                <div class="programs-brief">
-                    <i class="fas fa-microscope"></i>
-                    <p>برامج بحثية متقدمة في التقنيات الناشئة</p>
-                </div>
-                </div>
-            </div>
-
-            <div class="university-card hover-effect">
-                <div class="card-inner">
-                <i class="fas fa-university university-icon"></i>
-                <h3>جامعة الأميرة نورة</h3>
-                <p class="university-desc">كلية علوم الحاسب والمعلومات</p>
-                <div class="programs-brief">
-                    <i class="fas fa-graduation-cap"></i>
-                    <p>برامج متخصصة في تقنية المعلومات للطالبات</p>
-                </div>
-                </div>
-            </div>
-
-            <div class="university-card hover-effect">
-                <div class="card-inner">
-                <i class="fas fa-university university-icon"></i>
-                <h3>جامعة الملك عبدالعزيز</h3>
-                <p class="university-desc">كلية الحاسبات وتقنية المعلومات</p>
-                <div class="programs-brief">
-                    <i class="fas fa-certificate"></i>
-                    <p>برامج معتمدة في مختلف تخصصات التقنية</p>
-                </div>
-                </div>
-            </div>
-            </div>
-        </section>
-        </main>
-
-        <footer class="footer">
-            <div class="footer-waves">
-                <div class="wave" id="wave1"></div>
-                <div class="wave" id="wave2"></div>
-            </div>
-            
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4><i class="fas fa-paper-plane fa-bounce"></i> تواصل معنا</h4>
-                    <p><i class="fas fa-envelope animated-icon"></i> البريد الإلكتروني: haitham@taqani.sa</p>
-                    <p class="footer-note">نرد عليك بسرعة... إلا إذا كنا نبرمج 😅</p>
-                </div>
-                
-                <div class="footer-section">
-                    <h4><i class="fas fa-code-branch fa-beat-fade"></i> تابعني</h4>
-                    <div class="social-links">
-                        <a href="https://x.com/_Villo0" target="_blank" class="social-link twitter">
-                            <!-- تحديث أيقونة إكس -->
-                            <i class="fab fa-twitter"></i>
-                            <span class="tooltip">تابعني في إكس</span>
-                        </a>
-                        <a href="https://www.linkedin.com/in/haithamhattan/" target="_blank" class="social-link linkedin">
-                            <i class="fab fa-linkedin"></i>
-                            <span class="tooltip">تواصل معي في LinkedIn</span>
-                        </a>
-                        <a href="https://github.com/haitham8888" target="_blank" class="social-link github">
-                            <i class="fab fa-github"></i>
-                            <span class="tooltip">شوف مشاريعي في GitHub</span>
-                        </a>
+                <p class="university-desc">كلية الهندسة وعلوم الحاسب</p>
+                <div class="achievement">
+                    <div class="trophy-container">
+                        <i class="fas fa-trophy pulse"></i>
                     </div>
-                    <p class="footer-quote">"البرمجة هي فن حل المشكلات... وخلق مشكلات جديدة 😄 هذا كلام البطة الصينية حقتي"</p>
+                    <p>المركز الأول في الأمن السيبراني على مستوى المملكة في CyberHub لأكثر من سنة</p>
                 </div>
-        
-                <div class="footer-section">
-                    <h4><i class="fas fa-lightbulb fa-shake"></i> روابط مفيدة</h4>
-                    <ul class="footer-links">
-                        <li><a href="/careers.html"><i class="fas fa-book"></i> دليل المهن التقنية</a></li>
-                        <li><a href="/study-plan.html"><i class="fas fa-question-circle"></i> مسارات التقنية</a></li>
+                <div class="programs">
+                    <h4><i class="fas fa-star"></i> البرامج المميزة</h4>
+                    <ul class="programs-list">
+                        <li><i class="fas fa-robot"></i> الذكاء الاصطناعي وعلم البيانات</li>
+                        <li><i class="fas fa-shield-alt"></i> أمن المعلومات</li>
+                        <li><i class="fas fa-code"></i> تطوير التطبيقات والمواقع</li>
+                        <li><i class="fas fa-network-wired"></i> إنترنت الأشياء</li>
+                        <li><i class="fas fa-microchip"></i> الروبوتات</li>
                     </ul>
                 </div>
             </div>
-        
-            <div class="footer-bottom">
-                <p>
-                    &copy; 2025 تقني - صنع بـ <i class="fas fa-heart text-danger animated-heart"></i> 
-                    و <i class="fas fa-coffee"></i> و الكثير من 
-                    <i class="fas fa-bug" title="الأخطاء البرمجية"></i>
-                </p>
+
+            <div class="universities-grid">
+                <div class="university-card hover-effect">
+                    <div class="card-inner">
+                        <i class="fas fa-university university-icon"></i>
+                        <h3>جامعة الملك سعود</h3>
+                        <p class="university-desc">كلية علوم الحاسب والمعلومات</p>
+                        <div class="programs-brief">
+                            <i class="fas fa-brain"></i>
+                            <p>برامج متميزة في الذكاء الاصطناعي وتقنية المعلومات</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="university-card hover-effect">
+                    <div class="card-inner">
+                        <i class="fas fa-university university-icon"></i>
+                        <h3>جامعة الملك فهد للبترول والمعادن</h3>
+                        <p class="university-desc">كلية علوم وهندسة الحاسب الآلي</p>
+                        <div class="programs-brief">
+                            <i class="fas fa-award"></i>
+                            <p>تصنيف عالمي متقدم في مجالات الحوسبة</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="university-card hover-effect">
+                    <div class="card-inner">
+                        <i class="fas fa-university university-icon"></i>
+                        <h3>جامعة الملك عبدالله للعلوم والتقنية</h3>
+                        <p class="university-desc">قسم علوم الحاسب والهندسة</p>
+                        <div class="programs-brief">
+                            <i class="fas fa-microscope"></i>
+                            <p>برامج بحثية متقدمة في التقنيات الناشئة</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="university-card hover-effect">
+                    <div class="card-inner">
+                        <i class="fas fa-university university-icon"></i>
+                        <h3>جامعة الأميرة نورة</h3>
+                        <p class="university-desc">كلية علوم الحاسب والمعلومات</p>
+                        <div class="programs-brief">
+                            <i class="fas fa-graduation-cap"></i>
+                            <p>برامج متخصصة في تقنية المعلومات للطالبات</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="university-card hover-effect">
+                    <div class="card-inner">
+                        <i class="fas fa-university university-icon"></i>
+                        <h3>جامعة الملك عبدالعزيز</h3>
+                        <p class="university-desc">كلية الحاسبات وتقنية المعلومات</p>
+                        <div class="programs-brief">
+                            <i class="fas fa-certificate"></i>
+                            <p>برامج معتمدة في مختلف تخصصات التقنية</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </footer>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+        </div>
+        
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4><i class="fas fa-paper-plane fa-bounce"></i> تواصل معنا</h4>
+                <p class="email-container">
+                    <i class="fas fa-envelope animated-icon"></i>
+                    <a href="mailto:haitham.why@gmail.com" class="footer-email">
+                        haitham.why@gmail.com
+                    </a>
+                </p>
+                <p class="footer-note">نرد عليك بسرعة... إلا إذا كنا نبرمج 😅</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4><i class="fas fa-code-branch fa-beat-fade"></i> تابعني</h4>
+                <div class="social-links">
+                    <a href="https://x.com/_Villo0" target="_blank" class="social-link x-link">
+                        <i class="fa-brands fa-x"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/haithamhattan/" target="_blank" class="social-link linkedin">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/haitham8888" target="_blank" class="social-link github">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </div>
+                <p class="footer-quote">"البرمجة هي فن حل المشكلات... وخلق مشكلات جديدة 😄 هذا كلام البطة الصينية حقتي"</p>
+            </div>
+
+            <div class="footer-section">
+                <h4><i class="fas fa-lightbulb fa-shake"></i> روابط مفيدة</h4>
+                <ul class="footer-links">
+                    <li><a href="/careers.html"><i class="fas fa-book"></i> دليل المهن التقنية</a></li>
+                    <li><a href="/study-plan.html"><i class="fas fa-question-circle"></i> مسارات التقنية</a></li>
+                    <li><a href="/contact.html"><i class="fas fa-envelope"></i> تواصل معي</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+                &copy; 2025 تقني - صنع بـ <i class="fas fa-heart text-danger animated-heart"></i> 
+                و <i class="fas fa-coffee"></i> و الكثير من 
+                <i class="fas fa-bug" title="الأخطاء البرمجية"></i>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>

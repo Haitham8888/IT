@@ -3,138 +3,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تواصل معي - تقني</title>
+    <title>تقني - تواصل معي</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logo/image.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/logo/image.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/logo/image.png">
+    <link rel="manifest" href="images/site.webmanifest">
+    <meta name="theme-color" content="#2962ff">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/mobile-menu.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <style>
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .contact-header h1 {
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+        }
+
+        .contact-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .contact-form .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form label {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--primary-dark);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 1rem;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 8px rgba(41, 98, 255, 0.2);
+        }
+
+        .contact-form textarea {
+            resize: none;
+            height: 150px;
+        }
+
+        .contact-form button {
+            grid-column: span 2;
+            padding: 1rem 2rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .contact-form {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form button {
+                grid-column: span 1;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- ...existing navbar... -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <span class="logo-text">تقني</span>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="study-plan.html">الخطة الدراسية</a></li>
+                <li><a href="certificates.html">الشهادات المهنية</a></li>
+                <li><a href="careers.html">التدريب والتوظيف</a></li>
+                <li><a href="contact.html" class="active">تواصل معي</a></li>
+            </ul>
+        </div>
+    </nav>
 
     <main class="contact-container">
-        <header class="contact-hero">
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <h1 class="animate-text">أسعد بتواصلك 👋</h1>
-            <p class="subtitle">دائماً متحمس للتعاون ومشاركة المعرفة في مجال التقنية</p>
+        <header class="contact-header">
+            <h1>تواصل معي</h1>
+            <p>إذا كان لديك أي استفسار أو ترغب في التواصل معي، لا تتردد في إرسال رسالة.</p>
         </header>
 
-        <div class="contact-methods">
-            <!-- Social Media Section -->
-            <section class="contact-section social-section">
-                <h2><i class="fas fa-hashtag fa-bounce"></i> تابعني على</h2>
-                <div class="social-cards">
-                    <a href="https://x.com/_Villo0" target="_blank" class="social-card twitter">
-                        <div class="card-content">
-                            <i class="fab fa-twitter"></i>
-                            <h3>Twitter</h3>
-                            <p>@_Villo0</p>
-                        </div>
-                        <div class="card-hover">
-                            <span>تابعني للتحديثات التقنية</span>
-                            <i class="fas fa-external-link-alt"></i>
-                        </div>
-                    </a>
-
-                    <!-- LinkedIn Card -->
-                    <a href="https://www.linkedin.com/in/haithamhattan/" class="social-card linkedin">
-                        <div class="card-content">
-                            <i class="fab fa-linkedin"></i>
-                            <h3>LinkedIn</h3>
-                            <p>haithamhattan</p>
-                        </div>
-                        <div class="card-hover">
-                            <span>تواصل معي مهنياً</span>
-                            <i class="fas fa-external-link-alt"></i>
-                        </div>
-                    </a>
-
-                    <!-- GitHub Card -->
-                    <a href="https://github.com/haitham8888" class="social-card github">
-                        <div class="card-content">
-                            <i class="fab fa-github"></i>
-                            <h3>GitHub</h3>
-                            <p>haitham8888</p>
-                        </div>
-                        <div class="card-hover">
-                            <span>تصفح مشاريعي البرمجية</span>
-                            <i class="fas fa-external-link-alt"></i>
-                        </div>
-                    </a>
-                </div>
-            </section>
-
-            <!-- Contact Form Section -->
-            <section class="contact-section form-section">
-                <h2><i class="fas fa-paper-plane fa-bounce"></i> راسلني مباشرة</h2>
-                <form class="contact-form" action="mailto:haitham@taqani.sa" method="POST">
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label for="name">الاسم</label>
-                            <div class="input-container">
-                                <i class="fas fa-user"></i>
-                                <input type="text" id="name" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">البريد الإلكتروني</label>
-                            <div class="input-container">
-                                <i class="fas fa-envelope"></i>
-                                <input type="email" id="email" required>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="subject">الموضوع</label>
-                        <div class="input-container">
-                            <i class="fas fa-tag"></i>
-                            <select id="subject" required>
-                                <option value="">اختر موضوع الرسالة</option>
-                                <option value="collaboration">فرصة تعاون</option>
-                                <option value="question">استفسار تقني</option>
-                                <option value="other">آخر</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">الرسالة</label>
-                        <div class="input-container">
-                            <textarea id="message" required rows="5"></textarea>
-                        </div>
-                    </div>
-
-                    <button type="submit" class="submit-btn">
-                        إرسال الرسالة
-                        <i class="fas fa-paper-plane"></i>
-                    </button>
-                </form>
-            </section>
-        </div>
-
-        <!-- Quick Links -->
-        <section class="quick-links">
-            <h2><i class="fas fa-link fa-spin"></i> روابط سريعة</h2>
-            <div class="links-grid">
-                <a href="certificates.html" class="quick-link">
-                    <i class="fas fa-certificate"></i>
-                    الشهادات المهنية
-                </a>
-                <a href="careers.html" class="quick-link">
-                    <i class="fas fa-briefcase"></i>
-                    المسارات الوظيفية
-                </a>
-                <a href="study-plan.html" class="quick-link">
-                    <i class="fas fa-graduation-cap"></i>
-                    الخطة الدراسية
-                </a>
+        <form class="contact-form">
+            <div class="form-group">
+                <label for="name">الاسم</label>
+                <input type="text" id="name" name="name" required>
             </div>
-        </section>
+            <div class="form-group">
+                <label for="email">البريد الإلكتروني</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="subject">الموضوع</label>
+                <input type="text" id="subject" name="subject" required>
+            </div>
+            <div class="form-group">
+                <label for="message">الرسالة</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit">إرسال</button>
+        </form>
     </main>
 
-    <!-- ...existing footer... -->
+    <footer class="footer">
+        <div class="footer-waves"></div>
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+        </div>
+        
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4><i class="fas fa-paper-plane fa-bounce"></i> تواصل معنا</h4>
+                <p class="email-container">
+                    <i class="fas fa-envelope animated-icon"></i>
+                    <a href="mailto:haitham.why@gmail.com" class="footer-email">
+                        haitham.why@gmail.com
+                    </a>
+                </p>
+                <p class="footer-note">نرد عليك بسرعة... إلا إذا كنا نبرمج 😅</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4><i class="fas fa-code-branch fa-beat-fade"></i> تابعني</h4>
+                <div class="social-links">
+                    <a href="https://x.com/_Villo0" target="_blank" class="social-link x-link">
+                        <i class="fa-brands fa-x"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/haithamhattan/" target="_blank" class="social-link linkedin">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/haitham8888" target="_blank" class="social-link github">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </div>
+                <p class="footer-quote">"البرمجة هي فن حل المشكلات... وخلق مشكلات جديدة 😄 هذا كلام البطة الصينية حقتي"</p>
+            </div>
+
+            <div class="footer-section">
+                <h4><i class="fas fa-lightbulb fa-shake"></i> روابط مفيدة</h4>
+                <ul class="footer-links">
+                    <li><a href="/careers.html"><i class="fas fa-book"></i> دليل المهن التقنية</a></li>
+                    <li><a href="/study-plan.html"><i class="fas fa-question-circle"></i> مسارات التقنية</a></li>
+                    <li><a href="/contact.html"><i class="fas fa-envelope"></i> تواصل معي</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+                &copy; 2025 تقني - صنع بـ <i class="fas fa-heart text-danger animated-heart"></i> 
+                و <i class="fas fa-coffee"></i> و الكثير من 
+                <i class="fas fa-bug" title="الأخطاء البرمجية"></i>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>

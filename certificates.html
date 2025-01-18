@@ -3,92 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الشهادات المهنية - تقني</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>تقني - الشهادات المهنية</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logo/image.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/logo/image.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/logo/image.png">
+    <link rel="manifest" href="images/site.webmanifest">
+    <meta name="theme-color" content="#2962ff">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/certificates.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile-menu.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<style>
-    .navbar {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        padding: 1rem 2rem;
-        background: rgba(255, 255, 255, 0.95);
-        box-shadow: 0 2px 15px rgba(0,0,0,0.08);
-        direction: rtl;
-        margin-bottom: 1rem;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        transition: all 0.3s ease;
-        backdrop-filter: blur(10px);
-        border-radius: 0 0 15px 15px;
-    }
-    
-    .nav-links {
-        display: flex;
-        margin-right: 2rem;
-        list-style: none;
-        gap: 2rem;
-        padding: 0;
-    }
-
-    .logo {
-        font-size: 1.8rem;
-        font-weight: 700;
-        color: #2962ff;
-        transition: all 0.3s ease;
-    }
-
-    .logo:hover {
-        transform: scale(1.05);
-    }
-
-    .nav-links a {
-        color: #2c3e50;
-        text-decoration: none;
-        font-weight: 500;
-        padding: 0.5rem 1rem;
-        border-radius: 8px;
-        transition: all 0.3s ease;
-        position: relative;
-    }
-
-    .nav-links a:hover {
-        color: #2962ff;
-        background: rgba(41, 98, 255, 0.1);
-        transform: translateY(-2px);
-    }
-
-    .nav-links a::after {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 2px;
-        bottom: 0;
-        left: 50%;
-        background: #2962ff;
-        transition: all 0.3s ease;
-        transform: translateX(-50%);
-    }
-
-    .nav-links a:hover::after {
-        width: 80%;
-    }
-</style>
+    <link rel="stylesheet" href="css/navbar.css">
 </head>
 <body>
-<nav class="navbar">
-    <div class="logo">تقني</div>
-    <ul class="nav-links">
-        <li><a href="index.html">الرئيسية</a></li>
-        <li><a href="study-plan.html">الخطة الدراسية</a></li>
-        <li><a href="certificates.html">الشهادات المهنية</a></li>
-        <li><a href="careers.html">المسارات الوظيفية</a></li>
-        <li><a href="contact.html">تواصل معي</a></li>
-    </ul>
-</nav>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <span class="logo-text">تقني</span>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="study-plan.html">الخطة الدراسية</a></li>
+                <li><a href="certificates.html" class="active">الشهادات المهنية</a></li>
+                <li><a href="careers.html">التدريب والتوظيف</a></li>
+                <li><a href="contact.html">تواصل معي</a></li>
+            </ul>
+        </div>
+    </nav>
 
     <main class="certificates-container">
         <header class="page-header">
@@ -129,7 +76,7 @@
                 </div>
             </div>
 
-            <!-- التنقيب في البيانات -->
+            <!-- علم البيانات -->
             <div class="track-section">
                 <h2><i class="fas fa-database"></i> شهادات علم البيانات</h2>
                 <div class="certificates-grid">
@@ -141,7 +88,7 @@
                             <span><i class="fas fa-clock"></i> المدة: 4-6 أشهر</span>
                             <span><i class="fas fa-award"></i> معتمدة من Google</span>
                         </div>
-                        <a href="https://grow.google/certificates/data-analytics/" class="cert-link" target="_blank">
+                        <a href="https://www.coursera.org/professional-certificates/google-data-analytics" class="cert-link" target="_blank">
                             تفاصيل الشهادة <i class="fas fa-external-link-alt"></i>
                         </a>
                     </div>
@@ -154,7 +101,7 @@
                             <span><i class="fas fa-clock"></i> المدة: 6-8 أشهر</span>
                             <span><i class="fas fa-award"></i> معتمدة من IBM</span>
                         </div>
-                        <a href="https://www.ibm.com/training/badge/data-science-professional-certificate" class="cert-link" target="_blank">
+                        <a href="https://www.coursera.org/professional-certificates/ibm-data-science" class="cert-link" target="_blank">
                             تفاصيل الشهادة <i class="fas fa-external-link-alt"></i>
                         </a>
                     </div>
@@ -194,28 +141,25 @@
             </div>
         </section>
 
-        <section class="resources">
-            <h2>مصادر مفيدة للتحضير</h2>
+        <!-- Resources Section -->
+        <section class="resources-section">
+            <h2 class="section-title">مصادر مفيدة للتحضير</h2>
             <div class="resources-grid">
-                <a href="https://www.coursera.org" class="resource-card" target="_blank">
-                    <i class="fas fa-graduation-cap"></i>
+                <div class="resource-card">
                     <h3>Coursera</h3>
                     <p>دورات معتمدة من الجامعات والشركات العالمية</p>
-                </a>
-                <a href="https://www.udemy.com" class="resource-card" target="_blank">
-                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <div class="resource-card">
                     <h3>Udemy</h3>
                     <p>دورات عملية في مختلف مجالات التقنية</p>
-                </a>
-                <a href="https://www.youtube.com" class="resource-card" target="_blank">
-                    <i class="fab fa-youtube"></i>
+                </div>
+                <div class="resource-card">
                     <h3>YouTube</h3>
                     <p>محتوى تعليمي مجاني ومتنوع</p>
-                </a>
+                </div>
             </div>
         </section>
     </main>
-
 
     <footer class="footer">
         <div class="footer-waves">
@@ -226,30 +170,31 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h4><i class="fas fa-paper-plane fa-bounce"></i> تواصل معنا</h4>
-                <p><i class="fas fa-envelope animated-icon"></i> البريد الإلكتروني: haitham@taqani.sa</p>
+                <p class="email-container">
+                    <i class="fas fa-envelope animated-icon"></i>
+                    <a href="mailto:haitham.why@gmail.com" class="footer-email">
+                        haitham.why@gmail.com
+                    </a>
+                </p>
                 <p class="footer-note">نرد عليك بسرعة... إلا إذا كنا نبرمج 😅</p>
             </div>
             
             <div class="footer-section">
                 <h4><i class="fas fa-code-branch fa-beat-fade"></i> تابعني</h4>
                 <div class="social-links">
-                    <a href="https://x.com/_Villo0" target="_blank" class="social-link twitter">
-                        <!-- تحديث أيقونة إكس -->
-                        <i class="fab fa-twitter"></i>
-                        <span class="tooltip">تابعني في إكس</span>
+                    <a href="https://x.com/_Villo0" target="_blank" class="social-link x-link">
+                        <i class="fa-brands fa-x"></i>
                     </a>
                     <a href="https://www.linkedin.com/in/haithamhattan/" target="_blank" class="social-link linkedin">
-                        <i class="fab fa-linkedin"></i>
-                        <span class="tooltip">تواصل معي في LinkedIn</span>
+                        <i class="fa-brands fa-linkedin-in"></i>
                     </a>
                     <a href="https://github.com/haitham8888" target="_blank" class="social-link github">
-                        <i class="fab fa-github"></i>
-                        <span class="tooltip">شوف مشاريعي في GitHub</span>
+                        <i class="fa-brands fa-github"></i>
                     </a>
                 </div>
                 <p class="footer-quote">"البرمجة هي فن حل المشكلات... وخلق مشكلات جديدة 😄 هذا كلام البطة الصينية حقتي"</p>
             </div>
-    
+
             <div class="footer-section">
                 <h4><i class="fas fa-lightbulb fa-shake"></i> روابط مفيدة</h4>
                 <ul class="footer-links">
@@ -258,7 +203,7 @@
                 </ul>
             </div>
         </div>
-    
+
         <div class="footer-bottom">
             <p>
                 &copy; 2025 تقني - صنع بـ <i class="fas fa-heart text-danger animated-heart"></i> 
@@ -267,5 +212,12 @@
             </p>
         </div>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
